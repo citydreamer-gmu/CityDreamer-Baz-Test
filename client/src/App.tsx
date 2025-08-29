@@ -39,7 +39,7 @@ function App() {
               powerPreference: "default"
             }}
           >
-            <color attach="background" args={["#87CEEB"]} />
+            <color attach="background" args={["#F0F8FF"]} />
             
             {/* Lighting */}
             <ambientLight intensity={0.4} />
