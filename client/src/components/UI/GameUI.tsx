@@ -58,11 +58,13 @@ export default function GameUI() {
         </div>
       </div>
 
-      {/* Left side panels - all visible at once */}
-      <div className="absolute top-4 left-4 pointer-events-auto flex flex-col gap-4">
-        <ZoningPanel />
-        <ResourcePanel />
-        <HappinessPanel />
+      {/* Left side panels - all visible at once with scrolling */}
+      <div className="absolute top-4 left-4 bottom-4 pointer-events-auto w-72 overflow-y-auto">
+        <div className="flex flex-col gap-4 pb-4">
+          <ZoningPanel />
+          <ResourcePanel />
+          <HappinessPanel />
+        </div>
       </div>
 
       {/* Bottom controls */}
