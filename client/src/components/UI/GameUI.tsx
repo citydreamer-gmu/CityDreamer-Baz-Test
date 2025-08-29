@@ -1,4 +1,3 @@
-import { useState } from "react";
 import ZoningPanel from "./ZoningPanel";
 import ResourcePanel from "./ResourcePanel";
 import HappinessPanel from "./HappinessPanel";
@@ -7,7 +6,6 @@ import { Button } from "../ui/button";
 import { Card } from "../ui/card";
 
 export default function GameUI() {
-  const [activePanel, setActivePanel] = useState<string | null>("zoning");
   const { 
     isSimulationRunning, 
     toggleSimulation, 
@@ -37,33 +35,8 @@ export default function GameUI() {
 
   return (
     <div className="absolute inset-0 pointer-events-none">
-      {/* Top bar */}
-      <div className="absolute top-4 left-4 right-4 flex justify-between items-start pointer-events-auto">
-        <div className="flex gap-2">
-          <Button
-            variant={activePanel === "zoning" ? "default" : "outline"}
-            onClick={() => setActivePanel(activePanel === "zoning" ? null : "zoning")}
-            className="bg-gray-800 text-white border-gray-600 hover:bg-gray-700"
-          >
-            Zoning
-          </Button>
-          <Button
-            variant={activePanel === "resources" ? "default" : "outline"}
-            onClick={() => setActivePanel(activePanel === "resources" ? null : "resources")}
-            className="bg-gray-800 text-white border-gray-600 hover:bg-gray-700"
-          >
-            Resources
-          </Button>
-          <Button
-            variant={activePanel === "happiness" ? "default" : "outline"}
-            onClick={() => setActivePanel(activePanel === "happiness" ? null : "happiness")}
-            className="bg-gray-800 text-white border-gray-600 hover:bg-gray-700"
-          >
-            Happiness
-          </Button>
-        </div>
-
-        {/* Game controls */}
+      {/* Top bar with game controls */}
+      <div className="absolute top-4 right-4 pointer-events-auto">
         <div className="flex gap-2">
           <Button
             variant={isSimulationRunning ? "destructive" : "default"}
@@ -85,11 +58,11 @@ export default function GameUI() {
         </div>
       </div>
 
-      {/* Side panels */}
-      <div className="absolute top-20 left-4 pointer-events-auto">
-        {activePanel === "zoning" && <ZoningPanel />}
-        {activePanel === "resources" && <ResourcePanel />}
-        {activePanel === "happiness" && <HappinessPanel />}
+      {/* Left side panels - all visible at once */}
+      <div className="absolute top-4 left-4 pointer-events-auto flex flex-col gap-4">
+        <ZoningPanel />
+        <ResourcePanel />
+        <HappinessPanel />
       </div>
 
       {/* Bottom controls */}
@@ -109,11 +82,11 @@ export default function GameUI() {
         </Card>
       </div>
 
-      {/* Instructions */}
-      <div className="absolute top-4 right-4 pointer-events-auto">
-        <Card className="p-4 bg-gray-800 text-white border-gray-600 max-w-xs">
-          <h3 className="text-lg font-bold mb-2">Controls</h3>
-          <div className="text-sm space-y-1">
+      {/* Instructions moved to top left corner */}
+      <div className="absolute top-4 right-72 pointer-events-auto">
+        <Card className="p-3 bg-gray-800 text-white border-gray-600 max-w-xs">
+          <h3 className="text-sm font-bold mb-2">Controls</h3>
+          <div className="text-xs space-y-1">
             <p><strong>WASD/Arrows:</strong> Move camera</p>
             <p><strong>Q/E:</strong> Up/Down</p>
             <p><strong>Click:</strong> Place zones/buildings</p>
