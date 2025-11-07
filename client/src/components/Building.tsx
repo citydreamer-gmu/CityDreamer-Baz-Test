@@ -10,8 +10,8 @@ interface BuildingProps {
 }
 
 export default function Building({ cell, position }: BuildingProps) {
-  const grassTexture = useTexture("/textures/grass.png");
-  const asphaltTexture = useTexture("/textures/asphalt.png");
+  const grassexture = useTexture("/textures/grass.png");
+  const asphatTexture = useTexture("/textures/asphalt.png");
   
   // Animation refs for trains
   const trainRef = useRef<THREE.Group>(null);
@@ -49,7 +49,7 @@ export default function Building({ cell, position }: BuildingProps) {
   });
 
   // Create building components
-  const buildingComponents = useMemo(() => {
+  const buildingssComponents = useMemo(() => {
     const components: JSX.Element[] = [];
     let mainHeight = 0;
 

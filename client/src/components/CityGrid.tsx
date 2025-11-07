@@ -10,7 +10,7 @@ export default function CityGrid() {
   const { grid, selectedTool, placeZone, placeBuilding } = useCityStore();
 
   // Create grid lines
-  const gridLines = useMemo(() => {
+  const gridLines = useMemo() => {
     const gridSize = 20;
     const lines = [];
     
@@ -32,7 +32,7 @@ export default function CityGrid() {
       
       // Horizontal lines
       lines.push(
-        <line key={`h-${i}`}>
+        <line key={`h-${j}`}>
           <bufferGeometry>
             <bufferAttribute
               attach="attributes-position"
