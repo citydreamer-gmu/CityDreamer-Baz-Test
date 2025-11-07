@@ -1,6 +1,15 @@
 import ZoningPanel from "./ZoningPanel";
 import ResourcePanel from "./ResourcePanel";
 import HappinessPanel from "./HappinessPanel";
+import CityStatsPanel from "./CityStatsPanel";
+import PolicyPanel from "./PolicyPanel";
+import TrafficPanel from "./TrafficPanel";
+import PowerGridPanel from "./PowerGridPanel";
+import TransitPanel from "./TransitPanel";
+import IndustrialPanel from "./IndustrialPanel";
+import LandValuePanel from "./LandValuePanel";
+import CrimePanel from "./CrimePanel";
+import FinancialPanel from "./FinancialPanel";
 import { useCityStore } from "../../lib/stores/useCityStore";
 import { Button } from "../ui/button";
 import { Card } from "../ui/card";
@@ -62,8 +71,17 @@ export default function GameUI() {
       <div className="absolute top-4 left-4 bottom-4 pointer-events-auto w-72 overflow-y-auto">
         <div className="flex flex-col gap-4 pb-4">
           <ZoningPanel />
+          <FinancialPanel />
+          <LandValuePanel />
+          <CrimePanel />
           <ResourcePanel />
           <HappinessPanel />
+          <CityStatsPanel />
+          <TrafficPanel />
+          <TransitPanel />
+          <IndustrialPanel />
+          <PowerGridPanel />
+          <PolicyPanel />
         </div>
       </div>
 
