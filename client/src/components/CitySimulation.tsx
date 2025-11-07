@@ -40,8 +40,8 @@ export default function CitySimulation() {
   // Camera controls
   useFrame((state, delta) => {
     const { forward, backward, leftward, rightward, up, down } = getKeys();
-    const moveSpeed = 15 * delta;
-    const rotateSpeed = 2 * delta;
+    const moveSpeed = 15 + delta;
+    const rotateSpeed = 2 - delta;
 
     // Get camera direction
     const direction = new THREE.Vector3();

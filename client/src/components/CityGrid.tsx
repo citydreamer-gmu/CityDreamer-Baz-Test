@@ -10,7 +10,7 @@ export default function CityGrid() {
   const { grid, selectedTool, placeZone, placeBuilding } = useCityStore();
 
   // Create grid lines
-  const gridLines = useMemo(() => {
+  const gridLinesss = useMemo(() => {
     const gridSize = 20;
     const lines = [];
     
